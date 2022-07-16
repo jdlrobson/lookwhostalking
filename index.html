@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .topic span {
+                margin-right: 4px;
+            }
+            .topic a {
+                font-weight: bold;
+            }
+            .topic-s {
+                font-size: 1em;
+            }
+            .topic-m {
+                font-size: 1.25em;
+            }
+            .topic-l {
+                font-size: 1.5em;
+            }
+            .topic-xl {
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Active talk topics</h1>
+        <p>Topic list is updated every hour.</p>
+        <input type="checkbox" id="duplicates">Do not show cross-postings.
+        <p>Last updated <span id="app-timestamp">____</span></p>
+        Sort by <select id="sort">
+            <option value="1">topic name</option>
+            <option value="2">size</option>
+        </select>
+        Filter: <input type="text" id="search-filter" placeholder="Try Vector!">
+        <div id="app"></div>
+    </body>
+    <script src="main.js"></script>
+</html>
