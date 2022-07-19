@@ -40,6 +40,14 @@ const saveCache = ( path, json ) => {
     );
 };
 
+const getExpiryDate = ( url ) => {
+    if ( url.indexOf( '.wikipedia.org' ) > -1 ) {
+        return 1;
+    } else {
+        return 12;
+    }
+};
+
 const now = new Date();
 
 const cachedFetch = ( url ) => {
@@ -53,7 +61,7 @@ const cachedFetch = ( url ) => {
     console.log('(Fetching from server)')
     return fetch( url ).then((r)=>r.json()).then((json) => {
         // should expire anywhere between 1-2hrs
-        const mins = 1 + ( Math.random() * 60 );
+        const mins = getExpiryDate( url ) + ( Math.random() * 60 );
         fetchCache[url] = { json, expires: addMinsToDate( mins ) };
         saveCache( FETCH_CACHE_PATH, fetchCache );
         return json;
