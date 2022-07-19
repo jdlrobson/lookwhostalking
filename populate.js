@@ -82,7 +82,7 @@ let waitTime = 0;
 
 const pollAllProjects = () => {
     return Promise.all(
-        projects.map((p) => {
+        projects.map((p, i) => {
             waitTime += WAIT_INC;
             if ( tooManyRequests() ) {
                 waitTime = 0;
@@ -90,7 +90,7 @@ const pollAllProjects = () => {
             return waitFor(waitTime).then(() => {
                 const site = p.site;
                 const title = p.title;
-                console.log(`Loading topics from ${site} [[${title}]]`);
+                console.log(`Loading topics from ${site} [[${title}]] (${i}/${projects.length})`);
                 const url = `https://${site}/w/api.php?action=parse&format=json&page=${encodeURIComponent(title)}&prop=sections`
                 return cachedFetch(url).then((r) => {
                     const pSections = r.parse.sections.filter( ( { toclevel } ) => toclevel === 1);
