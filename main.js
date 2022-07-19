@@ -90,7 +90,7 @@ const render = () => {
             const topicSite = document.createElement( 'span' );
             topicSite.textContent = topic.site;
             const topicNode = document.createElement( 'a' );
-            topicNode.lang = topic.lang;
+            topicNode.lang = topic.language;
             topicNode.textContent = topic.line
             topicNode.href = topic.url;
             topicNode.setAttribute( 'class', getClass( topic.bytes ) );
