@@ -20,6 +20,8 @@ const sortFn = ( type ) => {
 const sorter = document.getElementById('sort');
 const deduper = document.getElementById( 'duplicates' );
 const filterNode = document.getElementById( 'search-filter' );
+const topicCount = document.getElementById( 'app-topic-count' );
+const filterCount = document.getElementById( 'app-filter-count' );
 
 const render = () => {
     const sortBy = sorter.value;
@@ -28,6 +30,7 @@ const render = () => {
 
     app.innerHTML = '';
     fetch( './topics.json' ).then((r) => r.json()).then((json) => {
+        topicCount.textContent = json.sections.length;
         let maxBytes = 0;
         let leastBytes;
         const unfilteredSections = json.sections.sort(sortFn(sortBy));
@@ -46,6 +49,7 @@ const render = () => {
                 return true;
             }
         })
+        filterCount.textContent = sections.length;
 
         sections.filter((n)=>n.bytes !== undefined).forEach((n) => {
             if ( n.bytes < 300 ) {
