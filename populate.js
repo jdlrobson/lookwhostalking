@@ -11,7 +11,7 @@ const FETCH_CACHE_PATH = `${__dirname}/.fetchCache.json`;
 const fetchCache = fs.existsSync( FETCH_CACHE_PATH ) ?
     JSON.parse(fs.readFileSync( FETCH_CACHE_PATH ).toString()) : {};
 
-const MAX_FETCHES = 50;
+const MAX_FETCHES = 100;
 /*
 projects.json: https://www.wikidata.org/wiki/Q4582194
 var getsite = (x) => {  const url = x.replace( 'wik', '.wik' ).replace( 'wiktionary', 'wiktionary.org' ).replace('commons.wiki', 'commons.wikipedia.org').replace('meta.wiki', 'meta.wikimedia.org').replace('.wikidatawiki', 'www.wikidata.org').replace('media.wiki.wiki', 'www.mediawiki.org').replace('.wikivoyage', 'wikivoyage.org').replace('.wikiversity', '.wikiversity.org').replace('wikinews', 'wikinews.org').replace('wikiquote','wikiquote.org').replace('wikibooks', 'wikibooks.org'); return url.indexOf('.org') === -1 ? url + 'pedia.org' : url }
