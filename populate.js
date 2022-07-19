@@ -42,9 +42,9 @@ const saveCache = ( path, json ) => {
 
 const getExpiryDate = ( url ) => {
     if ( url.indexOf( '.wikipedia.org' ) > -1 ) {
-        return 1;
+        return 60;
     } else {
-        return 12;
+        return ( 12 * 60 );
     }
 };
 
