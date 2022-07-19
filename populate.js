@@ -3,7 +3,7 @@ const projects = require('./projects.json');
 const topics = {
     sections: []
 };
-const WAIT_INC = _cachedOnly ? 0 : 2000;
+const WAIT_INC = _cachedOnly ? 0 : 500;
 const fetch = require( 'node-fetch');
 const fs = require( 'fs' );
 const TOPIC_PATH = `${__dirname}/topics.json`;
@@ -42,26 +42,28 @@ const saveCache = ( path, json ) => {
 };
 
 const getExpiryDate = ( url ) => {
-    if ( url.indexOf( '.wikipedia.org' ) > -1 ) {
+    if ( url.indexOf( 'wikidata.org' ) > -1 || url.indexOf( 'commons.wikimedia.org' ) > -1 ) {
+        return ( 12 * 60 );
+    } else if ( url.indexOf( '.wikipedia.org' ) > -1 ) {
         return ( 3 * 60 );
     } else {
-        return ( 12 * 60 );
+        return ( 24 * 60 );
     }
 };
 
 let numberOfFetchesInThisSession = 0;
+const tooManyRequests = () => numberOfFetchesInThisSession > MAX_FETCHES;
 const now = new Date();
 
 const cachedFetch = ( url ) => {
     const cachedResult = fetchCache[url];
-    const tooManyRequests = numberOfFetchesInThisSession > MAX_FETCHES;
     if ( cachedResult || _cachedOnly ) {
-        if ( now < cachedResult.expires || tooManyRequests ) {
+        if ( now < cachedResult.expires || tooManyRequests() ) {
             console.log('(Loaded from cache)')
             return Promise.resolve( cachedResult.json );
         }
     }
-    if ( tooManyRequests ) {
+    if ( tooManyRequests() ) {
         console.log( 'Refusing - too many requests' );
         return Promise.reject();
     }
@@ -82,6 +84,9 @@ const pollAllProjects = () => {
     return Promise.all(
         projects.map((p) => {
             waitTime += WAIT_INC;
+            if ( tooManyRequests() ) {
+                waitTime = 0;
+            }
             return waitFor(waitTime).then(() => {
                 const site = p.site;
                 const title = p.title;

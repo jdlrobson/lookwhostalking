@@ -3040,14 +3040,9 @@
         "title": "Wiktionary:啤酒馆"
     },
     {
-        "site": "commons.wikipedia.org",
+        "site": "commons.wikimedia.org",
         "href": "https://commons.wikimedia.org/wiki/Commons:Village_pump",
         "title": "Commons:Village pump"
-    },
-    {
-        "site": "media.wikiwikipedia.org",
-        "href": "https://www.mediawiki.org/wiki/Project:Village_Pump",
-        "title": "Project:Village Pump"
     },
     {
         "site": "meta.wikimedia.org",
@@ -3554,7 +3549,7 @@
         "title": "Wiktionary:Teknikvinden"
     },
     {
-        "site": "commons.wikipedia.org",
+        "site": "commons.wikimedia.org",
         "href": "https://commons.wikimedia.org/wiki/Commons:Village_pump/Technical",
         "title": "Commons:Village pump/Technical"
     },
