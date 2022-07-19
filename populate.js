@@ -11,6 +11,7 @@ const FETCH_CACHE_PATH = `${__dirname}/.fetchCache.json`;
 const fetchCache = fs.existsSync( FETCH_CACHE_PATH ) ?
     JSON.parse(fs.readFileSync( FETCH_CACHE_PATH ).toString()) : {};
 
+const MAX_FETCHES = 50;
 /*
 projects.json: https://www.wikidata.org/wiki/Q4582194
 var getsite = (x) => {  const url = x.replace( 'wik', '.wik' ).replace( 'wiktionary', 'wiktionary.org' ).replace('commons.wiki', 'commons.wikipedia.org').replace('meta.wiki', 'meta.wikimedia.org').replace('.wikidatawiki', 'www.wikidata.org').replace('media.wiki.wiki', 'www.mediawiki.org').replace('.wikivoyage', 'wikivoyage.org').replace('.wikiversity', '.wikiversity.org').replace('wikinews', 'wikinews.org').replace('wikiquote','wikiquote.org').replace('wikibooks', 'wikibooks.org'); return url.indexOf('.org') === -1 ? url + 'pedia.org' : url }
@@ -42,23 +43,30 @@ const saveCache = ( path, json ) => {
 
 const getExpiryDate = ( url ) => {
     if ( url.indexOf( '.wikipedia.org' ) > -1 ) {
-        return 60;
+        return ( 3 * 60 );
     } else {
         return ( 12 * 60 );
     }
 };
 
+let numberOfFetchesInThisSession = 0;
 const now = new Date();
 
 const cachedFetch = ( url ) => {
     const cachedResult = fetchCache[url];
+    const tooManyRequests = numberOfFetchesInThisSession > MAX_FETCHES;
     if ( cachedResult || _cachedOnly ) {
-        if ( now < cachedResult.expires ) {
+        if ( now < cachedResult.expires || tooManyRequests ) {
             console.log('(Loaded from cache)')
             return Promise.resolve( cachedResult.json );
         }
     }
+    if ( tooManyRequests ) {
+        console.log( 'Refusing - too many requests' );
+        return Promise.reject();
+    }
     console.log('(Fetching from server)')
+    numberOfFetchesInThisSession++;
     return fetch( url ).then((r)=>r.json()).then((json) => {
         // should expire anywhere between 1-2hrs
         const mins = getExpiryDate( url ) + ( Math.random() * 60 );
