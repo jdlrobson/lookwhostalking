@@ -6,9 +6,15 @@ const sortBySize = (topic, topic2) => {
     return ( topic.bytes || 0 ) > ( topic2.bytes || 0 ) ? -1 : 1;
 };
 
+const sortByDate = (topic, topic2) => {
+    return topic.indexedAt < topic2.indexedAt ? -1 : 1;
+};
+
 
 const sortFn = ( type ) => {
     switch ( type ) {
+        case '3':
+            return sortByDate;
         case '2':
             return sortBySize;
         default:
@@ -102,6 +108,9 @@ const render = () => {
             itemNode.appendChild( topicSite );
             itemNode.setAttribute( 'class', 'topic' );
             itemNode.appendChild( topicNode );
+            const span = document.createElement( 'em' );
+            span.textContent = ` Indexed on ${topic.indexedAt}`;
+            itemNode.appendChild( span );
             listNode.appendChild( itemNode );
         })
         app.appendChild( listNode );

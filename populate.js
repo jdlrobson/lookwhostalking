@@ -8,9 +8,11 @@ const fetch = require( 'node-fetch');
 const fs = require( 'fs' );
 const TOPIC_PATH = `${__dirname}/topics.json`;
 const FETCH_CACHE_PATH = `${__dirname}/.fetchCache.json`;
+const TOPIC_CACHE_PATH = `${__dirname}/.topicCache.json`;
 const fetchCache = fs.existsSync( FETCH_CACHE_PATH ) ?
     JSON.parse(fs.readFileSync( FETCH_CACHE_PATH ).toString()) : {};
-
+const topicCache = fs.existsSync( TOPIC_CACHE_PATH ) ?
+    JSON.parse(fs.readFileSync( TOPIC_CACHE_PATH ).toString()) : {};
 const MAX_FETCHES = 100;
 /*
 projects.json: https://www.wikidata.org/wiki/Q4582194
@@ -121,7 +123,16 @@ const pollAllProjects = () => {
 
 const update = () => {
     topics.modified = new Date();
+    const now = new Date();
+    topics.sections.forEach((topic) => {
+        const ts = topicCache[topic.url];
+        topic.indexedAt = ts || now;
+        if ( !ts ) {
+            topicCache[topic.url] = now;
+        }
+    });
     saveCache( TOPIC_PATH, topics );
+    saveCache( TOPIC_CACHE_PATH, topicCache );
 };
 
 pollAllProjects().then(update, update)

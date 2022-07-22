@@ -20,6 +20,10 @@
             .topic-xl {
                 font-size: 2em;
             }
+            #app em {
+                display: block;
+                padding-left: 20px;
+            }
         </style>
     </head>
     <body>
@@ -31,6 +35,7 @@
         Sort by <select id="sort">
             <option value="1">topic name</option>
             <option value="2">size</option>
+            <option value="3">most recently indexed</option>
         </select>
         Filter: <input type="text" id="search-filter" placeholder="Try Vector!">
         <div id="app"></div>
