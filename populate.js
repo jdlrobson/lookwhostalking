@@ -34,7 +34,7 @@ const waitFor = ( time ) => {
 let waitTime = 0;
 
 const pollAllProjects = () => {
-    return Promise.all(
+    return Promise.allSettled(
         projects.map((p, i) => {
             waitTime += WAIT_INC;
             if ( tooManyRequests() ) {
