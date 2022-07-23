@@ -87,6 +87,8 @@ const update = () => {
             topicCache[topic.url] = now;
         }
     });
+    // limit to 500 most recent topics
+    topics.sections = topics.sections.sort((a, b) => a.indexedAt < b.indexedAt ? -1 : 1).slice(0, 500)
     saveCache( TOPIC_PATH, topics );
     saveCache( TOPIC_CACHE_PATH, topicCache );
 };
