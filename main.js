@@ -7,7 +7,7 @@ const sortBySize = (topic, topic2) => {
 };
 
 const sortByDate = (topic, topic2) => {
-    return topic.indexedAt < topic2.indexedAt ? -1 : 1;
+    return new Date( topic.indexedAt) < new Date( topic2.indexedAt ) ? -1 : 1;
 };
 
 
