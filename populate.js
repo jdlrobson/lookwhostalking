@@ -76,7 +76,12 @@ const update = () => {
     topics.modified = new Date();
     const now = new Date();
     topics.sections.forEach((topic) => {
-        const ts = topicCache[topic.url];
+        let ts = topicCache[topic.url];
+        const siteTS = topicCache[topic.site];
+        // if site timestamp is less than index timestamp, topic should be marked as older
+        if ( siteTS && siteTS < ts ) {
+            ts = siteTS;
+        }
         topic.indexedAt = ts || now;
         if ( !ts ) {
             topicCache[topic.url] = now;
