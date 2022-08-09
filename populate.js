@@ -76,8 +76,8 @@ const update = () => {
     topics.modified = new Date();
     const now = new Date();
     topics.sections.forEach((topic) => {
-        let ts = topicCache[topic.url];
-        const siteTS = topicCache[topic.site];
+        let ts = new Date( topicCache[topic.url] );
+        const siteTS = new Date( topicCache[topic.site] );
         // if site timestamp is less than index timestamp, topic should be marked as older
         if ( siteTS && siteTS < ts ) {
             ts = siteTS;
@@ -88,7 +88,7 @@ const update = () => {
         }
     });
     // limit to 500 most recent topics
-    topics.sections = topics.sections.sort((a, b) => a.indexedAt < b.indexedAt ? 1 : -1).slice(0, 500)
+    topics.sections = topics.sections.sort((a, b) => new Date( a.indexedAt ) < new Date( b.indexedAt ) ? 1 : -1).slice(0, 500)
     saveCache( TOPIC_PATH, topics );
     saveCache( TOPIC_CACHE_PATH, topicCache );
 };
