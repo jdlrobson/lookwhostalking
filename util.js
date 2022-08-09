@@ -34,7 +34,7 @@ const now = new Date();
 const cachedFetch = ( url, cachedOnly ) => {
     const cachedResult = fetchCache[url];
     if ( cachedResult || cachedOnly ) {
-        if ( now < cachedResult.expires || tooManyRequests() ) {
+        if ( now < new Date( cachedResult.expires ) || tooManyRequests() ) {
             console.log('(Loaded from cache)')
             return Promise.resolve( cachedResult.json );
         }
