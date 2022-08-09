@@ -45,7 +45,7 @@ const cachedFetch = ( url, cachedOnly ) => {
     }
     console.log('(Fetching from server)')
     numberOfFetchesInThisSession++;
-    return fetch( url ).then((r)=>r.json()).then((json) => {
+    return fetch( url, { mode: 'no-cors' } ).then((r)=>r.json()).then((json) => {
         // should expire anywhere between 1-2hrs
         const mins = getExpiryDate( url ) + ( Math.random() * 60 );
         fetchCache[url] = { json, expires: addMinsToDate( mins ) };
