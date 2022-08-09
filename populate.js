@@ -45,7 +45,7 @@ const pollAllProjects = () => {
                 const title = p.title;
                 console.log(`Loading topics from ${site} [[${title}]] (${i}/${projects.length})`);
                 const url = `https://${site}/w/api.php?action=parse&format=json&page=${encodeURIComponent(title)}&prop=sections`
-                return cachedFetch(url).then((r) => {
+                const handle = (r) => {
                     const pSections = r.parse.sections.filter( ( { toclevel } ) => toclevel === 1);
                     const newSections = pSections.map(( { anchor, line, byteoffset }, i ) => {
                         const nextBytes = i + 1 >= pSections.length ? undefined : pSections[ i + 1 ].byteoffset;
@@ -66,7 +66,8 @@ const pollAllProjects = () => {
                         newSections
                      );
                      return r;
-                });
+                };
+                return cachedFetch(url).then(handle, handle);
             });
          })
     );
