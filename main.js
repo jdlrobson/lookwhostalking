@@ -28,6 +28,10 @@ const deduper = document.getElementById( 'duplicates' );
 const filterNode = document.getElementById( 'search-filter' );
 const topicCount = document.getElementById( 'app-topic-count' );
 const filterCount = document.getElementById( 'app-filter-count' );
+const projectCount = document.getElementById( 'app-projects-count');
+fetch( './projects.json' ).then((r) => r.json()).then((json) => {
+    projectCount.textContent = json.length;
+} );
 
 const render = () => {
     const sortBy = sorter.value;
