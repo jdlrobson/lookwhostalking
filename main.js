@@ -22,6 +22,9 @@ const sortFn = ( type ) => {
     }
 }
 
+const ignoreList = `
+Tech news [0-9]*
+`.split( '\n' ).map((line) => new RegExp( line ) );
 
 const sorter = document.getElementById('sort');
 const deduper = document.getElementById( 'duplicates' );
@@ -48,7 +51,8 @@ const render = () => {
             if ( uniqueOnly ) {
                 // filter the list so it only contains this name
                 const matches = unfilteredSections.filter((s2) => s2.line === s.line);
-                return matches.length === 1;
+                const noRegexMatches = ignoreList.filter((regex) => s.line.match(regex)).length === 0
+                return matches.length === 1 && !noRegexMatches;
             } else {
                 return true;
             }

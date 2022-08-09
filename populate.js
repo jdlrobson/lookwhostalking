@@ -11,6 +11,7 @@ const topicCache = fs.existsSync( TOPIC_CACHE_PATH ) ?
     JSON.parse(fs.readFileSync( TOPIC_CACHE_PATH ).toString()) : {};
 
 const util = require( './util.js' );
+const { resolve } = require('path');
 const cachedFetch = util.cachedFetch;
 const saveCache = util.saveCache;
 const tooManyRequests = util.tooManyRequests;
@@ -67,13 +68,21 @@ const pollAllProjects = () => {
                      );
                      return r;
                 };
-                return cachedFetch(url).then(handle, handle);
+                return new Promise(( resolve ) => {
+                    return cachedFetch(url).then( ( r ) => {
+                        handle(r);
+                        resolve();
+                    }, function () {
+                        resolve();
+                    } );
+                })
             });
          })
     );
 };
 
 const update = () => {
+    console.log('Updating topics')
     topics.modified = new Date();
     const now = new Date();
     topics.sections.forEach((topic) => {
