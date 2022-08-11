@@ -54,4 +54,4 @@ const cachedFetch = ( url, cachedOnly ) => {
     });
 }
 
-module.exports = { cachedFetch, tooManyRequests, saveCache };
+module.exports = { cachedFetch, tooManyRequests, saveCache, addMinsToDate };
