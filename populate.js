@@ -98,14 +98,14 @@ const update = () => {
     topics.modified = new Date();
     const now = new Date();
     topics.sections.forEach((topic) => {
-        let ts = new Date( topicCache[topic.url] );
-        topic.indexedAt = ts || now;
+        let ts = topicCache[topic.url];
+        topic.indexedAt = ts ? new Date( ts ) : now;
         if ( !ts ) {
             topicCache[topic.url] = now;
         }
     });
     // limit to 500 most recent topics
-    topics.sections = topics.sections.sort((a, b) => a.indexedAt < b.indexedAt ? 1 : -1).slice(0, 500)
+    topics.sections = topics.sections.sort((a, b) => a.indexedAt < b.indexedAt ? 1 : -1).slice(0, 1000);
     saveCache( TOPIC_PATH, topics );
     saveCache( TOPIC_CACHE_PATH, topicCache );
 };
