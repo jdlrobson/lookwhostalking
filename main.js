@@ -23,8 +23,16 @@ const sortFn = ( type ) => {
 }
 
 const ignoreList = `
-Tech news [0-9]*
-`.split( '\n' ).map((line) => new RegExp( line ) );
+Tech [nN]ews: [0-9]+.*
+[0-9]+-[0-9]+.*
+.*年第.*
+.*Техновини: .*
+[0-9]{4}.*
+.*Technické novinky:.*
+Технические новости:.*
+\<span\>Semaine.*
+\<span\>Technische Neuigkeiten: .*
+`.trim().split( '\n' ).map((line) => new RegExp( line ) );
 
 const sorter = document.getElementById('sort');
 const deduper = document.getElementById( 'duplicates' );
@@ -35,6 +43,18 @@ const projectCount = document.getElementById( 'app-projects-count');
 fetch( './projects.json' ).then((r) => r.json()).then((json) => {
     projectCount.textContent = json.length;
 } );
+
+const isNewsletter = (line) => {
+    for ( let i = 0; i < ignoreList.length; i++ ) {
+        const ignore = ignoreList[i];
+        const m = line.match( new RegExp( ignore ) );
+        if ( m ) {
+            console.log('match', line, ignore );
+            return true;
+        }
+    }
+    return false;
+};
 
 const render = () => {
     const sortBy = sorter.value;
@@ -51,8 +71,8 @@ const render = () => {
             if ( uniqueOnly ) {
                 // filter the list so it only contains this name
                 const matches = unfilteredSections.filter((s2) => s2.line === s.line);
-                const noRegexMatches = ignoreList.filter((regex) => s.line.match(regex)).length === 0
-                return matches.length === 1 && !noRegexMatches;
+                // check it's unique AND it's not a newsletter
+                return matches.length === 1 && !isNewsletter(s.line);
             } else {
                 return true;
             }
@@ -75,10 +95,10 @@ const render = () => {
             }
             if ( leastBytes == undefined || n.bytes < leastBytes ) {
                 leastBytes = n.bytes;
-                console.log(leastBytes, n.line, n.site)
+                //console.log(leastBytes, n.line, n.site)
             }
         })
-        console.log('range', leastBytes, maxBytes, maxBytes - leastBytes);
+        //console.log('range', leastBytes, maxBytes, maxBytes - leastBytes);
     
         const getClass = ( b ) => {
             if ( b === undefined ) {
