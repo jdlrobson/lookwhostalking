@@ -4,7 +4,7 @@ const WAIT_INC = _cachedOnly ? 0 : 500;
 const util = require( './util.js' );
 const cachedFetch = util.cachedFetch;
 const saveCache = util.saveCache;
-
+const args = process.argv;
 const fs = require( 'fs' );
 const TOPIC_CACHE_PATH = `${__dirname}/.topicCache.json`;
 const topicCache = fs.existsSync( TOPIC_CACHE_PATH ) ?
@@ -18,6 +18,21 @@ const waitFor = ( time ) => {
 
 let waitTime = 0;
 
+const loadLastModified = (site, title) => {
+    const url = `https://${site}/w/api.php?action=query&format=json&prop=revisions&titles=${encodeURIComponent(title)}&rvprop=timestamp&formatversion=2`;
+    return cachedFetch(url, _cachedOnly).then((r) => {
+        try {
+            topicCache[site] = r.query.pages[0].revisions[0].timestamp;
+            console.log('update', site, 'to',topicCache[site] )
+        } catch ( e ) {
+            // not sure what happened here.
+            console.log(r.query.pages);
+            console.log(`error: ${e}`)
+        }
+    });
+};
+
+
 const pollAllProjects = () => {
     return Promise.allSettled(
         projects.map((p, i) => {
@@ -26,17 +41,7 @@ const pollAllProjects = () => {
                 const site = p.site;
                 const title = p.title;
                 console.log(`Loading last modified from ${site} [[${title}]] (${i}/${projects.length})`);
-                const url = `https://${site}/w/api.php?action=query&format=json&prop=revisions&titles=${encodeURIComponent(title)}&rvprop=timestamp&formatversion=2`;
-                console.log(url);
-                return cachedFetch(url, _cachedOnly).then((r) => {
-                    try {
-                        topicCache[site] = r.query.pages[0].revisions[0].timestamp;
-                        console.log('update', site, 'to',topicCache[site] )
-                    } catch ( e ) {
-                        // not sure what happened here.
-                        console.log(`error: ${e}`)
-                    }
-                });
+                return loadLastModified(site, title);
             });
          })
     );
@@ -60,10 +65,22 @@ const update = () => {
                 topicCache[topic] = siteTs;
                 modifications++;
             }
+        } else {
+            console.log(`cannot update ${topic}`)
         }
     });
     console.log(`corrected ${modifications} entries`);
     saveCache( TOPIC_CACHE_PATH, topicCache );
 };
 
-pollAllProjects().then(update, update)
+const url = args[2];
+if ( url ) {
+    const m = url.match(/https:\/\/(.*)\/wiki\/(.*)/);
+    if (m[0] && m[1]) {
+       loadLastModified(m[1], decodeURIComponent(m[2])).then(update);
+    } else {
+        throw new Error(`Couldnt extract title and site from ${url}`);
+    }
+} else {
+    pollAllProjects().then(update, update)
+}
