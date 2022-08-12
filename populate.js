@@ -1,4 +1,5 @@
-const _cachedOnly = false;
+const args = process.argv;
+const _cachedOnly = !!args[2];
 const projects = require('./projects.json');
 const topics = {
     sections: []
@@ -11,7 +12,6 @@ const topicCache = fs.existsSync( TOPIC_CACHE_PATH ) ?
     JSON.parse(fs.readFileSync( TOPIC_CACHE_PATH ).toString()) : {};
 
 const util = require( './util.js' );
-const { resolve } = require('path');
 const cachedFetch = util.cachedFetch;
 const saveCache = util.saveCache;
 const tooManyRequests = util.tooManyRequests;
