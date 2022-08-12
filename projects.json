@@ -408,7 +408,7 @@
         "modified": "2022-05-30T16:14:12Z"
     },
     {
-        "site": "zh_yue.wikipedia.org",
+        "site": "zh-yue.wikipedia.org",
         "href": "https://zh-yue.wikipedia.org/wiki/Wikipedia:%E5%9F%8E%E5%B8%82%E8%AB%96%E5%A3%87_(%E6%8A%80%E8%A1%93)",
         "title": "Wikipedia:城市論壇 (技術)"
     },
@@ -617,7 +617,7 @@
         "modified": "2022-07-26T08:38:41Z"
     },
     {
-        "site": "bat_smg.wikipedia.org",
+        "site": "bat-smg.wikipedia.org",
         "href": "https://bat-smg.wikipedia.org/wiki/Vikiped%C4%97j%C4%97:Aptar%C4%97m%C4%81",
         "title": "Vikipedėjė:Aptarėmā"
     },
@@ -676,7 +676,7 @@
         "modified": "2022-07-04T16:12:35Z"
     },
     {
-        "site": "cbk_zam.wikipedia.org",
+        "site": "cbk-zam.wikipedia.org",
         "href": "https://cbk-zam.wikipedia.org/wiki/Wikipedia:Tambayan_De_Los_Chavacanos",
         "title": "Wikipedia:Tambayan De Los Chavacanos"
     },
@@ -783,7 +783,7 @@
         "modified": "2022-08-12T14:01:10Z"
     },
     {
-        "site": "fiu_vro.wikipedia.org",
+        "site": "fiu-vro.wikipedia.org",
         "href": "https://fiu-vro.wikipedia.org/wiki/Wikipedia:Arotus%C3%B5tar%C3%B5",
         "title": "Wikipedia:Arotusõtarõ"
     },
@@ -1094,7 +1094,7 @@
         "modified": "2022-07-26T07:00:48Z"
     },
     {
-        "site": "map_bms.wikipedia.org",
+        "site": "map-bms.wikipedia.org",
         "href": "https://map-bms.wikipedia.org/wiki/Wikipedia:Dopokan",
         "title": "Wikipedia:Dopokan"
     },
@@ -1171,7 +1171,7 @@
         "modified": "2022-07-26T08:37:21Z"
     },
     {
-        "site": "nds_nl.wikipedia.org",
+        "site": "nds-nl.wikipedia.org",
         "href": "https://nds-nl.wikipedia.org/wiki/Wikipedia:Praothoek",
         "title": "Wikipedia:Praothoek"
     },
@@ -1278,7 +1278,7 @@
         "modified": "2022-07-27T21:01:22Z"
     },
     {
-        "site": "roa_rup.wikipedia.org",
+        "site": "roa-rup.wikipedia.org",
         "href": "https://roa-rup.wikipedia.org/wiki/Wikipedia:Cafenea",
         "title": "Wikipedia:Cafenea"
     },
@@ -1486,12 +1486,12 @@
         "modified": "2022-07-27T21:01:25Z"
     },
     {
-        "site": "zh_classical.wikipedia.org",
+        "site": "zh-classical.wikipedia.org",
         "href": "https://zh-classical.wikipedia.org/wiki/%E7%B6%AD%E5%9F%BA%E5%A4%A7%E5%85%B8:%E6%9C%83%E9%A4%A8",
         "title": "維基大典:會館"
     },
     {
-        "site": "zh_min_nan.wikipedia.org",
+        "site": "zh-min-nan.wikipedia.org",
         "href": "https://zh-min-nan.wikipedia.org/wiki/Wikipedia:Chhi%C5%AB-%C3%A1-kha",
         "title": "Wikipedia:Chhiū-á-kha"
     },
