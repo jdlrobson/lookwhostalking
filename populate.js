@@ -110,5 +110,4 @@ const update = () => {
     saveCache( TOPIC_CACHE_PATH, topicCache );
 };
 
-clearCache();
 pollAllProjects().then(update, update)
