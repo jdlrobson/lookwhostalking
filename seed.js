@@ -71,7 +71,7 @@ const update = () => {
                 modifications++;
             }
         } else {
-            console.log(`cannot update ${topic}`)
+            console.log(`cannot update ${topic} (${site})`)
         }
     });
     console.log(`corrected ${modifications} entries`);
