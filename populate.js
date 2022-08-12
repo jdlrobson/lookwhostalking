@@ -87,9 +87,13 @@ const update = () => {
     const now = new Date();
     topics.sections.forEach((topic) => {
         let ts = topicCache[topic.url];
-        topic.indexedAt = ts ? new Date( ts ) : now;
         if ( !ts ) {
             topicCache[topic.url] = now;
+        }
+        if ( !topic.indexedAt ) {
+            topic.indexedAt = ts ? new Date( ts ) : now;
+        } else if ( topic.indexedAt > ts ) {
+            topic.indexedAt = new Date( ts );
         }
     });
     // limit to 500 most recent topics
