@@ -60,12 +60,6 @@
         "modified": "2022-08-02T10:40:17Z"
     },
     {
-        "site": "ca.wikipedia.org",
-        "href": "https://ca.wikipedia.org/wiki/Viquip%C3%A8dia:La_taverna/Tecnicismes",
-        "title": "Viquipèdia:La taverna/Tecnicismes",
-        "modified": "2014-12-09T23:03:26Z"
-    },
-    {
         "site": "ce.wikipedia.org",
         "href": "https://ce.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8:%D0%A4%D0%BE%D1%80%D1%83%D0%BC/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8%D0%BD",
         "title": "Википеди:Форум/Техникин",
@@ -114,12 +108,6 @@
         "modified": "2022-08-10T13:32:41Z"
     },
     {
-        "site": "eu.wikipedia.org",
-        "href": "https://eu.wikipedia.org/wiki/Wikipedia:Txokoa/Laguntza",
-        "title": "Wikipedia:Txokoa/Laguntza",
-        "modified": "2014-09-23T10:35:53Z"
-    },
-    {
         "site": "fa.wikipedia.org",
         "href": "https://fa.wikipedia.org/wiki/%D9%88%DB%8C%DA%A9%DB%8C%E2%80%8C%D9%BE%D8%AF%DB%8C%D8%A7:%D9%82%D9%87%D9%88%D9%87%E2%80%8C%D8%AE%D8%A7%D9%86%D9%87/%D9%81%D9%86%DB%8C",
         "title": "ویکی‌پدیا:قهوه‌خانه/فنی",
@@ -136,12 +124,6 @@
         "href": "https://frr.wikipedia.org/wiki/Wikipedia:T%C3%A4chnik",
         "title": "Wikipedia:Tächnik",
         "modified": "2022-08-08T19:49:03Z"
-    },
-    {
-        "site": "fr.wikipedia.org",
-        "href": "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Questions_techniques",
-        "title": "Wikipédia:Questions techniques",
-        "modified": "2020-11-12T07:35:22Z"
     },
     {
         "site": "glk.wikipedia.org",
@@ -178,12 +160,6 @@
         "href": "https://id.wikipedia.org/wiki/Wikipedia:Warung_Kopi_(Teknis)",
         "title": "Wikipedia:Warung Kopi (Teknis)",
         "modified": "2022-08-12T13:44:07Z"
-    },
-    {
-        "site": "ilo.wikipedia.org",
-        "href": "https://ilo.wikipedia.org/wiki/Wikipedia:Dap-ayan/Teknikal",
-        "title": "Wikipedia:Dap-ayan/Teknikal",
-        "modified": "2018-08-06T19:42:38Z"
     },
     {
         "site": "it.wikipedia.org",
@@ -336,12 +312,6 @@
         "modified": "2022-07-27T21:01:23Z"
     },
     {
-        "site": "shn.wikipedia.org",
-        "href": "https://shn.wikipedia.org/wiki/%E1%80%9D%E1%80%AE%E1%82%87%E1%81%B6%E1%80%AE%E1%82%87%E1%81%BD%E1%80%AE%E1%80%B8%E1%80%90%E1%80%AE%E1%80%B8%E1%80%9A%E1%82%83%E1%80%B8:%E1%80%9C%E1%81%A2%E1%81%BC%E1%80%BA%E1%82%89%E1%81%BC%E1%80%99%E1%80%BA%E1%82%89%E1%81%BC%E1%80%B5%E1%80%84%E1%80%BA%E1%82%88_(%E1%80%95%E1%81%A2%E1%82%86%E1%80%B8%E1%80%91%E1%82%85%E1%81%B5%E1%80%BA%E1%82%89)",
-        "title": "ဝီႇၶီႇၽီးတီးယႃး:လၢၼ်ႉၼမ်ႉၼဵင်ႈ (ပၢႆးထႅၵ်ႉ)",
-        "modified": "2021-04-21T23:24:11Z"
-    },
-    {
         "site": "si.wikipedia.org",
         "href": "https://si.wikipedia.org/wiki/%E0%B7%80%E0%B7%92%E0%B6%9A%E0%B7%92%E0%B6%B4%E0%B7%93%E0%B6%A9%E0%B7%92%E0%B6%BA%E0%B7%8F:%E0%B6%9A%E0%B7%9D%E0%B6%B4%E0%B7%92_%E0%B6%9A%E0%B6%A9%E0%B7%9A_(technical)",
         "title": "විකිපීඩියා:කෝපි කඩේ (technical)",
@@ -461,18 +431,6 @@
         "modified": "2022-07-28T18:20:22Z"
     },
     {
-        "site": "ru.wikinews.org",
-        "href": "https://ru.wikinews.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8:%D0%A4%D0%BE%D1%80%D1%83%D0%BC/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9",
-        "title": "Викиновости:Форум/Технический",
-        "modified": "2021-04-24T05:25:40Z"
-    },
-    {
-        "site": "bs.wikiquote.org",
-        "href": "https://bs.wikiquote.org/wiki/Wikicitati:Tehni%C4%8Dka_pitanja",
-        "title": "Wikicitati:Tehnička pitanja",
-        "modified": "2021-04-16T15:26:46Z"
-    },
-    {
         "site": "it.wikiquote.org",
         "href": "https://it.wikiquote.org/wiki/Wikiquote:Malfunzionamenti",
         "title": "Wikiquote:Malfunzionamenti",
@@ -507,18 +465,6 @@
         "href": "https://pl.wikisource.org/wiki/Wiki%C5%BAr%C3%B3d%C5%82a:Skryptorium/Pulpit_techniczny",
         "title": "Wikiźródła:Skryptorium/Pulpit techniczny",
         "modified": "2022-08-07T17:47:02Z"
-    },
-    {
-        "site": "fr.wikiversity.org",
-        "href": "https://fr.wikiversity.org/wiki/Projet:Laboratoire",
-        "title": "Projet:Laboratoire",
-        "modified": "2021-12-05T12:42:28Z"
-    },
-    {
-        "site": "it.wikiversity.org",
-        "href": "https://it.wikiversity.org/wiki/Wikiversit%C3%A0:Officina",
-        "title": "Wikiversità:Officina",
-        "modified": "2021-04-27T17:26:52Z"
     },
     {
         "site": "pl.wikivoyage.org",
@@ -579,12 +525,6 @@
         "href": "https://commons.wikimedia.org/wiki/Commons:Village_pump/Technical",
         "title": "Commons:Village pump/Technical",
         "modified": "2022-08-12T03:07:59Z"
-    },
-    {
-        "site": "www.mediawiki.org",
-        "href": "https://www.mediawiki.org/wiki/Project:Support_desk",
-        "title": "Project:Support desk",
-        "modified": "2021-01-14T06:13:50Z"
     },
     {
         "site": "meta.wikimedia.org",
@@ -657,12 +597,6 @@
         "href": "https://ast.wikipedia.org/wiki/Wikipedia:Chigre",
         "title": "Wikipedia:Chigre",
         "modified": "2022-08-10T20:22:33Z"
-    },
-    {
-        "site": "as.wikipedia.org",
-        "href": "https://as.wikipedia.org/wiki/%E0%A7%B1%E0%A6%BF%E0%A6%95%E0%A6%BF%E0%A6%AA%E0%A6%BF%E0%A6%A1%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE:%E0%A7%B0%E0%A6%BE%E0%A6%87%E0%A6%9C%E0%A7%B0_%E0%A6%9A%27%E0%A7%B0%E0%A6%BE",
-        "title": "ৱিকিপিডিয়া:ৰাইজৰ চ'ৰা",
-        "modified": "2017-05-17T16:38:29Z"
     },
     {
         "site": "atj.wikipedia.org",
@@ -795,12 +729,6 @@
         "modified": "2022-07-04T16:12:39Z"
     },
     {
-        "site": "cv.wikipedia.org",
-        "href": "https://cv.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8:%D0%9A%D0%B0%D0%BD%D0%B0%D1%88%D0%BB%D1%83",
-        "title": "Википеди:Канашлу",
-        "modified": "2020-04-27T00:37:29Z"
-    },
-    {
         "site": "cy.wikipedia.org",
         "href": "https://cy.wikipedia.org/wiki/Wicipedia:Y_Caffi",
         "title": "Wicipedia:Y Caffi",
@@ -847,12 +775,6 @@
         "href": "https://et.wikipedia.org/wiki/Vikipeedia:%C3%9Cldine_arutelu",
         "title": "Vikipeedia:Üldine arutelu",
         "modified": "2022-08-10T06:58:28Z"
-    },
-    {
-        "site": "ext.wikipedia.org",
-        "href": "https://ext.wikipedia.org/wiki/G%C3%BCiquipeya:El_Seranu",
-        "title": "Güiquipeya:El Seranu",
-        "modified": "2021-09-05T21:30:58Z"
     },
     {
         "site": "ff.wikipedia.org",
@@ -912,12 +834,6 @@
         "href": "https://gn.wikipedia.org/wiki/Vikipet%C3%A3_myangek%C3%B5i:Tekohapegua",
         "title": "Vikipetã myangekõi:Tekohapegua",
         "modified": "2022-08-02T17:08:11Z"
-    },
-    {
-        "site": "gom.wikipedia.org",
-        "href": "https://gom.wikipedia.org/wiki/%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BF%E0%A4%AA%E0%A5%80%E0%A4%A1%E0%A4%BF%E0%A4%AF%E0%A4%BE:Tintto",
-        "title": "विकिपीडिया:Tintto",
-        "modified": "2020-06-10T07:18:38Z"
     },
     {
         "site": "gor.wikipedia.org",
@@ -1104,12 +1020,6 @@
         "href": "https://lb.wikipedia.org/wiki/Wikipedia:De_Staminee",
         "title": "Wikipedia:De Staminee",
         "modified": "2022-08-03T14:15:27Z"
-    },
-    {
-        "site": "lez.wikipedia.org",
-        "href": "https://lez.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A4%D0%BE%D1%80%D1%83%D0%BC",
-        "title": "Википедия:Форум",
-        "modified": "2017-06-07T21:27:57Z"
     },
     {
         "site": "lfn.wikipedia.org",
@@ -1302,22 +1212,10 @@
         "modified": "2022-01-18T11:51:11Z"
     },
     {
-        "site": "ny.wikipedia.org",
-        "href": "https://ny.wikipedia.org/wiki/Wikipedia:Community_Portal",
-        "title": "Wikipedia:Community Portal",
-        "modified": "2021-07-12T09:38:06Z"
-    },
-    {
         "site": "oc.wikipedia.org",
         "href": "https://oc.wikipedia.org/wiki/Wikip%C3%A8dia:La_tav%C3%A8rna",
         "title": "Wikipèdia:La tavèrna",
         "modified": "2022-08-06T14:35:05Z"
-    },
-    {
-        "site": "or.wikipedia.org",
-        "href": "https://or.wikipedia.org/wiki/%E0%AC%89%E0%AC%87%E0%AC%95%E0%AC%BF%E0%AC%AA%E0%AC%BF%E0%AC%A1%E0%AC%BC%E0%AC%BF%E0%AC%86:%E0%AC%86%E0%AC%B2%E0%AD%8B%E0%AC%9A%E0%AC%A8%E0%AC%BE_%E0%AC%B8%E0%AC%AD%E0%AC%BE",
-        "title": "ଉଇକିପିଡ଼ିଆ:ଆଲୋଚନା ସଭା",
-        "modified": "2018-07-19T08:44:52Z"
     },
     {
         "site": "os.wikipedia.org",
@@ -1514,12 +1412,6 @@
         "modified": "2022-05-31T17:38:59Z"
     },
     {
-        "site": "tl.wikipedia.org",
-        "href": "https://tl.wikipedia.org/wiki/Wikipedia:Kapihan",
-        "title": "Wikipedia:Kapihan",
-        "modified": "2021-02-08T05:05:11Z"
-    },
-    {
         "site": "tum.wikipedia.org",
         "href": "https://tum.wikipedia.org/wiki/Wikipedia:Community_Portal",
         "title": "Wikipedia:Community Portal"
@@ -1575,12 +1467,6 @@
         "href": "https://wo.wikipedia.org/wiki/Wikipedia:P%C3%A9nc_mi",
         "title": "Wikipedia:Pénc mi",
         "modified": "2022-05-02T18:55:24Z"
-    },
-    {
-        "site": "wuu.wikipedia.org",
-        "href": "https://wuu.wikipedia.org/wiki/Wikipedia:%E7%BA%A2%E8%8C%B6%E5%9D%8A",
-        "title": "Wikipedia:红茶坊",
-        "modified": "2021-08-20T13:58:44Z"
     },
     {
         "site": "yi.wikipedia.org",
@@ -1796,12 +1682,6 @@
         "modified": "2022-08-09T10:01:28Z"
     },
     {
-        "site": "be.wiktionary.org",
-        "href": "https://be.wiktionary.org/wiki/%D0%92%D1%96%D0%BA%D1%96%D1%81%D0%BB%D0%BE%D1%9E%D0%BD%D1%96%D0%BA:%D0%A4%D0%BE%D1%80%D1%83%D0%BC",
-        "title": "Вікіслоўнік:Форум",
-        "modified": "2021-11-24T08:29:03Z"
-    },
-    {
         "site": "bg.wiktionary.org",
         "href": "https://bg.wiktionary.org/wiki/%D0%A3%D0%B8%D0%BA%D0%B8%D1%80%D0%B5%D1%87%D0%BD%D0%B8%D0%BA:%D0%A0%D0%B0%D0%B7%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8",
         "title": "Уикиречник:Разговори",
@@ -1830,12 +1710,6 @@
         "href": "https://ca.wiktionary.org/wiki/Viccionari:La_taverna",
         "title": "Viccionari:La taverna",
         "modified": "2022-08-11T06:03:36Z"
-    },
-    {
-        "site": "co.wiktionary.org",
-        "href": "https://co.wiktionary.org/wiki/Wikizziunariu:Cumunit%C3%A0",
-        "title": "Wikizziunariu:Cumunità",
-        "modified": "2020-08-14T13:51:12Z"
     },
     {
         "site": "cy.wiktionary.org",
@@ -1878,11 +1752,5 @@
         "href": "https://commons.wikimedia.org/wiki/Commons:Village_pump",
         "title": "Commons:Village pump",
         "modified": "2022-08-12T15:12:34Z"
-    },
-    {
-        "site": "mediawiki.org",
-        "href": "https://www.mediawiki.org/wiki/Project:Village_Pump",
-        "title": "Project:Village Pump",
-        "modified": "2021-01-24T15:29:12Z"
     }
 ]
