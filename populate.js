@@ -81,18 +81,6 @@ const pollAllProjects = () => {
     );
 };
 
-const clearCache = () => {
-    let cleared = 0;
-    const sevenDaysAgo = util.addMinsToDate( -60 * 24 * 30, new Date() )
-    Object.keys( topicCache ).forEach((key) => {
-        const expiry = new Date( topicCache[key] );
-        if ( expiry < sevenDaysAgo ) {
-            delete topicCache[key];
-            cleared++;
-        }
-    })
-    console.log(`Cleared ${cleared} keys`);
-}
 const update = () => {
     console.log('Updating topics')
     topics.modified = new Date();

@@ -22,12 +22,15 @@ const loadLastModified = (site, title) => {
     const url = `https://${site}/w/api.php?action=query&format=json&prop=revisions&titles=${encodeURIComponent(title)}&rvprop=timestamp&formatversion=2`;
     return cachedFetch(url, _cachedOnly).then((r) => {
         try {
-            topicCache[site] = r.query.pages[0].revisions[0].timestamp;
+            const timestamp = r.query.pages[0].revisions[0].timestamp;
+            topicCache[site] = timestamp;
             console.log('update', site, 'to',topicCache[site] )
+            return timestamp;
         } catch ( e ) {
             // not sure what happened here.
             console.log(r.query.pages);
             console.log(`error: ${e}`)
+            return null;
         }
     });
 };
@@ -41,7 +44,9 @@ const pollAllProjects = () => {
                 const site = p.site;
                 const title = p.title;
                 console.log(`Loading last modified from ${site} [[${title}]] (${i}/${projects.length})`);
-                return loadLastModified(site, title);
+                loadLastModified(site, title).then(function (timestamp) {
+                    projects[i].modified = timestamp;
+                })
             });
          })
     );
@@ -71,6 +76,7 @@ const update = () => {
     });
     console.log(`corrected ${modifications} entries`);
     saveCache( TOPIC_CACHE_PATH, topicCache );
+    saveCache( `${__dirname}/projects.json`, projects)
 };
 
 const url = args[2];

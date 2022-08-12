@@ -8,7 +8,7 @@ const MAX_FETCHES = 100;
 const saveCache = ( path, json ) => {
     fs.writeFileSync(
         path,
-        JSON.stringify( json )
+        JSON.stringify( json, null, 4 )
     );
 };
 
