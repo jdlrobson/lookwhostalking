@@ -47,6 +47,10 @@ const pollAllProjects = () => {
                 console.log(`Loading topics from ${site} [[${title}]] (${i}/${projects.length})`);
                 const url = `https://${site}/w/api.php?action=parse&format=json&page=${encodeURIComponent(title)}&prop=sections`
                 const handle = (r) => {
+                    if ( !r || !r.parse || !r.parse.sections ) {
+                        console.log('Bad response', r);
+                        return;
+                    }
                     const pSections = r.parse.sections.filter( ( { toclevel } ) => toclevel === 1);
                     const newSections = pSections.map(( { anchor, line, byteoffset }, i ) => {
                         const nextBytes = i + 1 >= pSections.length ? undefined : pSections[ i + 1 ].byteoffset;
