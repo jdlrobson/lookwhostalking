@@ -3,7 +3,7 @@ const fetch = require( 'node-fetch');
 const FETCH_CACHE_PATH = `${__dirname}/.fetchCache.json`;
 const fetchCache = fs.existsSync( FETCH_CACHE_PATH ) ?
 JSON.parse(fs.readFileSync( FETCH_CACHE_PATH ).toString()) : {};
-const MAX_FETCHES = 50;
+const MAX_FETCHES = 30;
 
 const saveCache = ( path, json ) => {
     fs.writeFileSync(
@@ -52,9 +52,10 @@ const cachedFetch = ( url, cachedOnly ) => {
         fetchCache[url] = { json, expires: addMinsToDate( mins ) };
         saveCache( FETCH_CACHE_PATH, fetchCache );
         return json;
-    }, ( r ) => {
+    }, (r) => {
+        console.log(r);
         failed++;
-        return r;
+        return Promise.reject();
     });
 }
 
