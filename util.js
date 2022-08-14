@@ -52,8 +52,9 @@ const cachedFetch = ( url, cachedOnly ) => {
         fetchCache[url] = { json, expires: addMinsToDate( mins ) };
         saveCache( FETCH_CACHE_PATH, fetchCache );
         return json;
-    }, () => {
+    }, ( r ) => {
         failed++;
+        return r;
     });
 }
 
