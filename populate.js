@@ -4,7 +4,7 @@ const projects = require('./projects.json');
 const topics = {
     sections: []
 };
-const WAIT_INC = _cachedOnly ? 0 : 500;
+const WAIT_INC = _cachedOnly ? 0 : 1000;
 const fs = require( 'fs' );
 const TOPIC_PATH = `${__dirname}/topics.json`;
 const TOPIC_CACHE_PATH = `${__dirname}/.topicCache.json`;
