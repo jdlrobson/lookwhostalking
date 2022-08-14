@@ -92,8 +92,9 @@ const update = () => {
         }
         if ( !topic.indexedAt ) {
             topic.indexedAt = ts ? new Date( ts ) : now;
-        } else if ( topic.indexedAt > ts ) {
-            topic.indexedAt = new Date( ts );
+        } else {
+            // convert string to date
+            topic.indexedAt = new Date( topic.indexedAt );
         }
     });
     // limit to 500 most recent topics
