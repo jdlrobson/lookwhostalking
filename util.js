@@ -54,4 +54,8 @@ const cachedFetch = ( url, cachedOnly ) => {
     });
 }
 
-module.exports = { cachedFetch, tooManyRequests, saveCache, addMinsToDate };
+const stats = () => {
+    console.log(`${numberOfFetchesInThisSession} fetches this session.`);
+}
+
+module.exports = { cachedFetch, tooManyRequests, saveCache, addMinsToDate, stats };

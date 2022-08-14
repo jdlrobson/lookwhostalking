@@ -101,6 +101,7 @@ const update = () => {
     topics.sections = topics.sections.sort((a, b) => a.indexedAt < b.indexedAt ? 1 : -1).slice(0, 1000);
     saveCache( TOPIC_PATH, topics );
     saveCache( TOPIC_CACHE_PATH, topicCache );
+    util.stats();
 };
 
 pollAllProjects().then(update, update)
