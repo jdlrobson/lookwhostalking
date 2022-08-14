@@ -28,6 +28,7 @@ const getExpiryDate = ( url ) => {
     }
 };
 
+let failed = 0;
 let numberOfFetchesInThisSession = 0;
 const tooManyRequests = () => numberOfFetchesInThisSession > MAX_FETCHES;
 const now = new Date();
@@ -51,11 +52,13 @@ const cachedFetch = ( url, cachedOnly ) => {
         fetchCache[url] = { json, expires: addMinsToDate( mins ) };
         saveCache( FETCH_CACHE_PATH, fetchCache );
         return json;
+    }, () => {
+        failed++;
     });
 }
 
 const stats = () => {
-    console.log(`${numberOfFetchesInThisSession} fetches this session.`);
+    console.log(`${numberOfFetchesInThisSession} fetches this session. ${failed} failures.`);
 }
 
 module.exports = { cachedFetch, tooManyRequests, saveCache, addMinsToDate, stats };
