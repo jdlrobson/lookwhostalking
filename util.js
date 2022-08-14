@@ -3,7 +3,7 @@ const fetch = require( 'node-fetch');
 const FETCH_CACHE_PATH = `${__dirname}/.fetchCache.json`;
 const fetchCache = fs.existsSync( FETCH_CACHE_PATH ) ?
 JSON.parse(fs.readFileSync( FETCH_CACHE_PATH ).toString()) : {};
-const MAX_FETCHES = 100;
+const MAX_FETCHES = 50;
 
 const saveCache = ( path, json ) => {
     fs.writeFileSync(
